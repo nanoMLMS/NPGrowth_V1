@@ -1,0 +1,4 @@
+region deposi_box_0 block -480.000000 -475.000000 -2.000000 2.000000 -2.000000 2.000000
+molecule molecule_0 /var/folders/ly/swwjrbg503100mf78khg_7t80000gn/T/tmpekbgn1de
+region target_0_0_0 block -0.500000 0.500000 -0.500000 0.500000 -0.500000 0.500000
+fix deposit_0 added deposit 500 0 5000 42 region deposi_box_0 near 4.0 vx 5.0 8.0 target target_0_0_0 mol molecule_0
