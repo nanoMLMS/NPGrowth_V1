@@ -1,0 +1,18 @@
+[
+  {
+    "deposit_region": [-480, -475, -2, 2, -2, 2],
+    "targets": [
+      {
+        "shape_file": "shapes/single.json",
+        "position": [0, 0, 0],
+        "rotation": [0, 0, 0]
+      }
+    ],
+    "type": "Cu",
+    "v": [5.0, 8.0],
+    "near": 4.0,
+    "n_depo": 500,
+    "every": 1000,
+    "seed": 42
+  }
+]

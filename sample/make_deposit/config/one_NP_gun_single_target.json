@@ -1,0 +1,20 @@
+[
+  {
+    "deposit_region": [-480, -475, -2, 2, -2, 2],
+
+    "molecule_xyz": "Pt147_Ih.xyz", 
+    "targets": [
+      {
+        "shape_file": "shapes/single.json",
+        "position": [0, 0, 0],
+        "rotation": [0, 0, 0]
+      }
+    ],
+    "type": 0,
+    "v": [5.0, 8.0],
+    "near": 4.0,
+    "n_depo": 500,
+    "every": 5000,
+    "seed": 42
+  }
+]
