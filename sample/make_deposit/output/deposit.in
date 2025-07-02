@@ -1,0 +1,7 @@
+region deposi_box_0 block -2.000000 2.000000 -40.000000 -35.000000 -2.000000 2.000000
+molecule molecule_0 /tmp/tmpqbx8h_ek
+region target_0_0_0 block -2.000000 2.000000 -2.000000 2.000000 -2.000000 2.000000
+region target_0_0_1 block 3.000000 7.000000 3.000000 7.000000 3.000000 7.000000
+region target_0_0_2 block -7.000000 -3.000000 -7.000000 -3.000000 -7.000000 -3.000000
+region target_box_0 union 3 target_0_0_0 target_0_0_1 target_0_0_2
+fix deposit_0 added deposit 500 0 1000 42 region deposi_box_0 near 4.0 vx 5.0 8.0 target target_box_0 mol molecule_0

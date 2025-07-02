@@ -1,0 +1,3 @@
+region deposi_box_0 block -480.000000 -475.000000 -2.000000 2.000000 -2.000000 2.000000
+region target_0_0_0 block -0.500000 0.500000 -0.500000 0.500000 -0.500000 0.500000
+fix deposit_0 added deposit 500 Cu 1000 42 region deposi_box_0 near 4.0 vx 5.0 8.0 target target_0_0_0 
