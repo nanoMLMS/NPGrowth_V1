@@ -118,3 +118,17 @@ NPGrowth_V1/
 │   ├── potentials/
 │   ├── make_deposit/
 │   └── seeds/
+
+
+
+## To run:
+
+To create the configuartion for the deposition:
+
+python3 make_deposition.py \                                                                                                   
+  --config config/single_gun_single_target.json \
+  --output output/test_0
+
+then to run the lammps:
+
+mpirun -np 4 $HOME/lammps/bin/lmp -in sample.in
