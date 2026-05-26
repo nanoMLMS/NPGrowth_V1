@@ -116,4 +116,5 @@ NPGrowth_V1/
 │   ├── sample.in                  # Main LAMMPS input script
 │   ├── molecule0.txt
 │   ├── potentials/
+│   ├── make_deposit/
 │   └── seeds/
