@@ -76,11 +76,30 @@ grep "minimum_image" src/fix_deposit.cpp
 mkdir build
 cd build
 
+(on indaco:
+module load intel-oneapi-mpi
+module load intel-oneapi-mkl
+
+cmake ../cmake \
+  -DCMAKE_INSTALL_PREFIX=$HOME/lammps \
+  -DBUILD_MPI=on \
+  -DBUILD_OMP=off \
+  -DPKG_MOLECULE=on \
+  -DPKG_MANYBODY=on \
+  -DPKG_KSPACE=on \
+  -DFFT=MKL \
+  -DCMAKE_C_COMPILER=mpicc \
+  -DCMAKE_CXX_COMPILER=mpicxx
+
+
+)
+
 cmake ../cmake \
   -DCMAKE_INSTALL_PREFIX=$HOME/lammps \
   -DPKG_MOLECULE=on \
   -DPKG_MANYBODY=on \
-  -DPKG_KSPACE=on
+  -DPKG_KSPACE=on \
+  -DBUILD_MPI=yes
 
 make -j 8
 make install
