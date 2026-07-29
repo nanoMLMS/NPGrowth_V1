@@ -1,0 +1,15 @@
+{
+  "element": "Cu",
+  "cluster_size": 147,
+  "n_clusters": 4,
+  "displacement": 14.5,
+  "seed": 42,
+  "overlap_radius": 1.28,
+  "max_iter": 500000,
+  "nequil_skip": 100,
+  "geometry": "line",
+  "clusters": {
+    "source": "equilibration/Cu_147_13_300.dump",
+    "frames": "random"
+  }
+}

@@ -1,0 +1,46 @@
+# a simple example script on how to run sintering simulations
+# with a langevin thermostat and nve integration in lammps.
+# e.g. starting from arbitrarily complex configurations
+# produced with make-sintering-config.py
+
+# if using this input or modified versions of it, some 
+# parameters should be passed by command line. These are
+# file_in (input config)
+# temp (thermostat temperature)
+# seed (random seed)
+# steps (total integration steps)
+
+boundary f f f
+units metal
+
+#read initial configuration
+read_data ${file_in}
+mass 1 63.546
+
+timestep 0.0025
+
+#example here: a machine-learning potential (flare)
+pair_style flare
+pair_coeff * * potentials/lmp.flare
+
+#to distribute processors
+#as the simulations proceeds
+comm_style tiled
+balance 0.9 rcb #initial balancing
+
+#init velocities
+velocity all create ${temp} ${seed} sum yes
+
+#fix & run sintering simulation
+fix 1 all nve
+fix 2 all langevin ${temp} ${temp} $(100*dt) ${seed} zero yes 
+#fix 3 all momentum 5 angular rescale #avoid
+fix 4 all balance 5000 1.1 rcb  
+
+#outputs
+fix thermoprint0 all print 400 "$(step) $(temp) $(pe) $(ke)" append sintering_output.txt screen no
+dump mydump all atom 400 sintering_output.dump
+
+thermo 4000
+
+run ${steps}
